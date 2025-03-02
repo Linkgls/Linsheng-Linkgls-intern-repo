@@ -8,6 +8,7 @@
     - And compared to the other extension(JSON Formatter), I prefer this style to show JSON.
 4. Lighthouse
     - A performance auditing tool. It could analyze web applications for speed, accessibility, SEO and so on.
+
 **- What was the most useful thing you learned?**
 These extensions improve **debugging workflows**, **API interaction**, and **performance analysis**, making web development more efficient.
 
