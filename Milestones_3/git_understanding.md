@@ -32,3 +32,35 @@ Git bisect is a command-line tool that uses a binary search algorithm to help id
 1. **Efficiency**: By using binary search, it will be much faster than manually checking every commit.
 2. **Accuracy:** It systematically tests commits to identify the original problematic one, reducing the likelihood of human error.
 3.  **Automation:** Git bisect can integrate with scripts to automatically run tests on each commit, further streamlining the debugging process.
+---
+~~~ shell
+git checkout main -- <file>
+~~~
+**What does this command do?**
+This command could restore the specific file from main branch to this working directory without affecting other changes in current branch. Essentially, it reverts the file to the state it is in on main.
+**When would you use it in a real project?**
+When I only want to modify some specific files, but not modify the other files I have already changed.
+~~~ shell
+git cherry-pick <commit>
+~~~
+**What does this command do?**
+This command applies a specific commit from another branch to the current branch by using the identification code. It effectively "picks" a commit and applies its changes without merging the entire branch.
+**When would you use it in a real project?**
+This Cherry-picking will allow me to isolate one single commit and apply wherever it needed. This commit may be a bug fix or a single feature.
+~~~ shell
+git log
+~~~
+**What does this command do?**
+git log displays the commit history of your repository. It shows commit messages, authors, dates, and commit hashes, providing a timeline of how changes evolved.
+**When would you use it in a real project?**
+This command is essential for reviewing the project history, debugging issues, and understanding the evolution of the codebase. It's a critical tool for both code reviews and for tracing the origin of bugs.
+~~~ shell
+git blame <file>
+~~~
+**What does this command do?**
+This command annotates each line in a file with details about the last commit that modified that line, including the author, commit hash, and the date of modification.
+**When would you use it in a real project?**
+I will use this when I want to check out the origin of a particular change. It’s invaluable for debugging and understanding why a certain change was made
+- **After all, what surprised you while testing these commands?**
+I was pleasantly surprised by the level of precision and efficiency these commands offer.
+Ease of fine-grained operation: git checkout main could restore only one file. And git cherry-pick <commit> could restore one commit. These commands provides plenty of different level of file changes for projects.
