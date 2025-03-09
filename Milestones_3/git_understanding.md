@@ -65,10 +65,17 @@ I will use this when I want to check out the origin of a particular change. Itâ€
 I was pleasantly surprised by the level of precision and efficiency these commands offer.
 Ease of fine-grained operation: git checkout main could restore only one file. And git cherry-pick <commit> could restore one commit. These commands provides plenty of different level of file changes for projects.
 --- 
-**What caused the conflict?**
+- **What caused the conflict?**
 The conflict was caused by making different changes to the same file in two separate branches. 
 Then when one branch be merged into another branch, the conflict will be caused.
-**How did you resolve it?**
+- **How did you resolve it?**
 By using the Vscode plugin, it will show some hints like ==== <<<< >>>>. By analyzing the different between these two parts, I will choose which part should be saved to this branch.
-**What did you learn?**
+- **What did you learn?**
 Dealing conflicts is very common situations during the collaboration team. The key is to understand the root of conflicts and try to solve them by tools.
+---
+- **Why is pushing directly to main problematic?**
+In a collaborate team, there are many people try to do changes in the same time. It will be very hard for dealing so many conflicts.
+- **How do branches help with reviewing code?**
+Each person will do changes to their own branch. The work from different team member will be isolated. If some bug need to be fixed, a bug-fix branch could be created. And all the bug fixing and test jobs will be finished inside this branch until the bug fixed successfully.
+- **What happens if two people edit the same file on different branches?**
+This file will be different on different branches till these two branches being merged.
