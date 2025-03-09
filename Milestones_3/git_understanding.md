@@ -64,3 +64,11 @@ I will use this when I want to check out the origin of a particular change. Itâ€
 - **After all, what surprised you while testing these commands?**
 I was pleasantly surprised by the level of precision and efficiency these commands offer.
 Ease of fine-grained operation: git checkout main could restore only one file. And git cherry-pick <commit> could restore one commit. These commands provides plenty of different level of file changes for projects.
+--- 
+**What caused the conflict?**
+The conflict was caused by making different changes to the same file in two separate branches. 
+Then when one branch be merged into another branch, the conflict will be caused.
+**How did you resolve it?**
+By using the Vscode plugin, it will show some hints like ==== <<<< >>>>. By analyzing the different between these two parts, I will choose which part should be saved to this branch.
+**What did you learn?**
+Dealing conflicts is very common situations during the collaboration team. The key is to understand the root of conflicts and try to solve them by tools.
