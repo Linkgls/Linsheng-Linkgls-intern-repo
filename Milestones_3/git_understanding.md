@@ -21,3 +21,14 @@ A good commit message should be:
 1. Hard for debug: Make it difficult to identify the root cause of issues.
 2. Complicate Code History: A messy commit log can make it hard to trace changes.
 3. Slow Down Team Productivity: May need to spend extra time deciphering the intent behind changes.
+---
+- **What Does Git Bisect Do?**
+Git bisect is a command-line tool that uses a binary search algorithm to help identify which commit introduced a bug. "git bisect start/reset" is the Start and End command line. By using the command line "git bisect bad" "git bisect good" to mark the known bad and good commits. Git bisect will automatically test intermediate commits, which will reducing the number of steps needed to pinpoint the faulty change.
+- **When Would You Use It in a Real-World Debugging Situation?**
+1. A bug appears unexpectedly in a large commit history.
+2. The error isn’t easily reproducible by inspecting recent changes manually.
+3. To reduce manual effort.
+- **How Does It Compare to Manually Reviewing Commits?**
+1. **Efficiency**: By using binary search, it will be much faster than manually checking every commit.
+2. **Accuracy:** It systematically tests commits to identify the original problematic one, reducing the likelihood of human error.
+3.  **Automation:** Git bisect can integrate with scripts to automatically run tests on each commit, further streamlining the debugging process.
