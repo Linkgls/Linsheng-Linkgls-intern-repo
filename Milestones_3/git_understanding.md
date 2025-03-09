@@ -12,11 +12,11 @@ Therefore, it is very important to make it well-organized and give effective cod
 - **What makes a good commit message?**
 A good commit message should be:
 1. Clear and Concise: It quickly communicates the purpose of the commit in a brief summary.
-2. Focused one point: It describes a single, coherent change without mixing unrelated updates.
+2. Focused: It describes a single, coherent change without mixing unrelated updates.
 - **How does a clear commit message help in team collaboration?**
 1. Easy for understanding: Make it easy to understand the purpose and impact of changes
 2. Form a changing history for this project
-3. Speeds up onboarding: New member could learn this project by reading a well-documented commit history.
+3. Speeds up onboarding: New team member could learn this project by reading a well-documented commit history.
 - **How can poor commit messages cause issues later?**
 1. Hard for debug: Make it difficult to identify the root cause of issues.
 2. Complicate Code History: A messy commit log can make it hard to trace changes.
