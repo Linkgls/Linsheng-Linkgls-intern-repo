@@ -1,0 +1,44 @@
+# CI Workflow for Markdown Linting and Spell Checking
+
+This GitHub Actions workflow is designed to run on pull requests (PRs) and ensure that all Markdown files in your repository follow the proper style guidelines and are free of spelling mistakes.
+
+## Workflow File: .github/workflows/ci.yml
+
+```yaml
+name: CI - Markdown Linting and Spell Check
+
+# Trigger workflow on pull requests targeting the main branch
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js (required for running npm packages)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # Step 3: Install markdownlint-cli and cspell globally
+      - name: Install Dependencies
+        run: |
+          npm install -g markdownlint-cli cspell
+
+      # Step 4: Run Markdown Linting on all Markdown files
+      - name: Run Markdown Linting
+        run: |
+          markdownlint "**/*.md"
+
+      # Step 5: Run Spell Check on all Markdown files
+      - name: Run Spell Check
+        run: |
+          cspell "**/*.md"
