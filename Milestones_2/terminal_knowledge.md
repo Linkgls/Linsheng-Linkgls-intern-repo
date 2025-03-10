@@ -1,3 +1,5 @@
+# Terminal Knowledge
+
 - **Which terminal client did you choose?**
   - iTerm2 + zsh
 - **Why?**

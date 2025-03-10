@@ -1,4 +1,7 @@
+# VS Code Productivity
+
 **Top 10 shortcuts:**
+
 1. Command + P: Go to File.
 2. Ctrl + Shift + `: OPEN the terminal.
 3. Option + Up/Down: Move line up/down.
@@ -11,6 +14,7 @@
 10. Command + B: Toggle sidebar visibility.
 
 **Most Useful Shortcuts for Daily Work**
+
 1. Command + P: Quickly switch between files in projects.
 2. Cmd + D & Cmd + Shift + L: Bulk edit names easily.
 3. Cmd + /: Fast commenting.
