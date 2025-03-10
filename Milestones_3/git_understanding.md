@@ -79,3 +79,12 @@ In a collaborate team, there are many people try to do changes in the same time.
 Each person will do changes to their own branch. The work from different team member will be isolated. If some bug need to be fixed, a bug-fix branch could be created. And all the bug fixing and test jobs will be finished inside this branch until the bug fixed successfully.
 - **What happens if two people edit the same file on different branches?**
 This file will be different on different branches till these two branches being merged.
+---
+- **What is the difference between staging and committing?**
+Staging(using git add <file>)  will make all the changes waiting in the waiting room. All changes will be staged to wait to the next commit.
+Committing(using git commit <file>) will just upload all the changes to that branch. A commit serves as a snapshot of your project at a given moment, complete with a commit message that explains the change.
+- **Why does Git separate these two steps?**
+**Selective Commit**: I can choose exactly which changes to include in a commit, rather than committing everything modified.
+**Review Opportunity**: The staging area is good to review, modify, and even split changes into different commits, ensuring each commit is logical and focused.
+- **When would you want to stage changes without committing?**
+When I want to review all changes to make sure all the modification is correct and logical. And when I want to select some file changes in this commit to make the commit more focused.
