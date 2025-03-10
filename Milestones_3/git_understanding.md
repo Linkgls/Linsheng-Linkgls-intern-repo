@@ -86,7 +86,7 @@ I will use this when I want to check out the origin of a particular change. Itâ€
 
 - **After all, what surprised you while testing these commands?**
   I was pleasantly surprised by the level of precision and efficiency these commands offer.
-  Ease of fine-grained operation: git checkout main could restore only one file. And git cherry-pick <commit> could restore one commit. These commands provides plenty of different level of file changes for projects.
+  Ease of fine-grained operation: git checkout main could restore only one file. And git cherry-pick could restore one commit. These commands provides plenty of different level of file changes for projects.
 
 ---
 
@@ -110,8 +110,8 @@ I will use this when I want to check out the origin of a particular change. Itâ€
 ---
 
 - **What is the difference between staging and committing?**
-  Staging(using git add <file>) will make all the changes waiting in the waiting room. All changes will be staged to wait to the next commit.
-  Committing(using git commit <file>) will just upload all the changes to that branch. A commit serves as a snapshot of your project at a given moment, complete with a commit message that explains the change.
+  Staging(using git add ) will make all the changes waiting in the waiting room. All changes will be staged to wait to the next commit.
+  Committing(using git commit ) will just upload all the changes to that branch. A commit serves as a snapshot of your project at a given moment, complete with a commit message that explains the change.
 - **Why does Git separate these two steps?**
   **Selective Commit**: I can choose exactly which changes to include in a commit, rather than committing everything modified.
   **Review Opportunity**: The staging area is good to review, modify, and even split changes into different commits, ensuring each commit is logical and focused.
