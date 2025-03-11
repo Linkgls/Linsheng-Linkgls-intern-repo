@@ -16,9 +16,11 @@
    Complex if/else trees that make code harder to follow.
 6. Commented-Out Code:
    Unused code that clutters the codebase.
+
    ```python
    # function A
    ```
+
 7. Inconsistent Naming:
    Variable names that don't clearly describe their purpose. String A, Int B
 
