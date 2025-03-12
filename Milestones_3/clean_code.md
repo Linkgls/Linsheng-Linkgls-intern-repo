@@ -95,3 +95,72 @@ function add(a, b) {
 - **When should you avoid comments and instead improve the code?**
   When the code is too simple. Therefore, compared to add comments, it will be more convenient to let the code self-explanatory.
   And don't add comments to explain something like the meaning of variable. Try to modify the name of variables to let them easy to understand.
+
+---
+
+## Refactoring Code for Simplicity
+
+### Example Code Before Refactoring
+
+```javascript
+function checkOut(cart) {
+  let discount = 0.9;
+  if (cart != null) {
+    if (cart.products && cart.products.length > 0) {
+      let sum_price = 0;
+      for (let i = 0; i < cart.products.length; i++) {
+        let product = cart.products[i];
+        if (product.discount && product.discount > 0) {
+          sum_price += product.price * product.amount * (1 - tem.discount);
+        }
+      }
+      if (sum_price > 300) {
+        return sum_price * discount;
+      } else {
+        return sum_price;
+      }
+    } else {
+      return 0;
+    }
+  } else {
+    throw new Error("Cart is Empty!!!");
+  }
+}
+```
+
+### Example Code After Refactoring
+
+```javascript
+function checkOut(cart) {
+  if (!cart) {
+    throw new Error("Cart is Empty!!!");
+  }
+
+  if (!cart.items || cart.items.length === 0) {
+    return 0;
+  }
+
+  return calculatePrice(cart);
+}
+
+function calculatePrice(cart) {
+  let sum_price = 0;
+  let product = cart.products[i];
+  if (product.discount && product.discount > 0) {
+    sum_price += product.price * product.amount * (1 - tem.discount);
+  }
+  let discount = 0.9;
+  if (sum_price > 300) {
+    return sum_price * discount;
+  } else {
+    return sum_price;
+  }
+}
+```
+
+- **What made the original code complex?**
+  There are plenty of if-else conditions, making it hard to follow.
+- **How did refactoring improve it?**
+
+1. Add some early validation using Guard Clauses simplified the overall structure by handling invalid situations.
+2. Extracting some calculation into helper functions to reduce redundancy.
