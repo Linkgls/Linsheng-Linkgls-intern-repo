@@ -164,3 +164,69 @@ function calculatePrice(cart) {
 
 1. Add some early validation using Guard Clauses simplified the overall structure by handling invalid situations.
 2. Extracting some calculation into helper functions to reduce redundancy.
+
+---
+
+## Avoiding Code Duplication
+
+### Original Code for avoiding code duplication
+
+```javascript
+function welcomeToNewUser(user) {
+  if (user) {
+    console.log("Welcome! " + user.firstName + " " + user.lastName);
+    console.log("Hope You Have A Nice Day!");
+  }
+}
+
+function showInfo(user) {
+  if (user) {
+    console.log("Name: " + user.firstName + " " + user.lastName);
+    console.log("Email: " + user.email);
+    console.log("Account Type: " + user.type);
+  }
+}
+```
+
+### After Refactor
+
+```javascript
+// all user information formatter func
+function formatAllInfo(user) {
+  if (!user) {
+    return null;
+  }
+  const fullName = user.firstName + " " + user.lastName;
+  return {
+    fullName: fullName,
+    email: user.email,
+    type: user.type,
+    welcomeMessage: "Welcome! " + fullName,
+    nameInfo: "Name: " + fullName,
+    emailInfo: "Email: " + user.email,
+    accountInfo: "Account Type: " + user.type,
+  };
+}
+function welcomeToNewUser(user) {
+  const info = formatAllInfo(user);
+  if (info) {
+    console.log(info.welcomeMessage);
+    console.log("Hope You Have A Nice Day!");
+  }
+}
+
+function showInfo(user) {
+  const info = formatAllInfo(user);
+  if (info) {
+    console.log(info.nameInfo);
+    console.log(info.emailInfo);
+    console.log(info.accountInfo);
+  }
+}
+```
+
+- **What were the issues with duplicated code?**
+  There are two duplicated code, which will increase maintenance effort. Any change will applied to multi-functions.
+- **How did refactoring improve maintainability?**
+  All user info will be format in the function formatAllInfo, which will ensure consistency across different parts of the code.
+  The further update of the user's info will only need to modify this function.
