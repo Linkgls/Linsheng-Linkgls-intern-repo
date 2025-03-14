@@ -230,3 +230,85 @@ function showInfo(user) {
 - **How did refactoring improve maintainability?**
   All user info will be format in the function formatAllInfo, which will ensure consistency across different parts of the code.
   The further update of the user's info will only need to modify this function.
+
+---
+
+## Writing Small, Focused Functions
+
+### Original Code For Writing Small/Focused Functions
+
+```javascript
+function checkOut(cart) {
+  if (!cart) {
+    throw new Error("No Cart Error!!!");
+  }
+  if (!cart.goods || cart.goods.length == 0) {
+    console.log("The Cart is empty!");
+    return;
+  }
+  let totalCost = 0;
+  for (let i = 0; i < cart.goods.length; i++) {
+    good = goods[i];
+    console.log("Calculate good " + good.id + ": " + good.name + "!");
+    totalCost += good.price * good.quantity * good.discount;
+  }
+  console.log("Total Cost: " + totalCost);
+  return totalCost;
+}
+```
+
+### Code After Refactor for Writing Small, Focused Functions
+
+```javascript
+/**
+ * Check the validation of cart
+ * @param {Object} cart
+ * @returns {boolean} If cart is valid return true，else return false
+ */
+function validateCart(cart) {
+  if (!cart) {
+    throw new Error("No Cart Error!!!");
+  }
+  if (!cart.goods || cart.goods.length === 0) {
+    console.log("The Cart is empty!");
+    return false;
+  }
+  return true;
+}
+
+/**
+ * 计算单个商品的总价，并输出计算日志
+ * Calculate the total price of each good, and output the calculation log.
+ * @param {Object} good
+ * @returns {number} total cost of this good.
+ */
+function calculateGoodCost(good) {
+  console.log("Calculate good " + good.id + ": " + good.name + "!");
+  return good.price * good.quantity * good.discount;
+}
+
+/**
+ * Check out the cart
+ * @param {Object} cart
+ * @returns {number|undefined} return the total cost of the whole cart
+ */
+function checkOut(cart) {
+  if (!validateCart(cart)) {
+    return;
+  }
+  let totalCost = 0;
+  for (let i = 0; i < cart.goods.length; i++) {
+    const good = cart.goods[i];
+    totalCost += calculateGoodCost(good);
+  }
+  console.log("Total Cost: " + totalCost);
+  return totalCost;
+}
+```
+
+- **Why is breaking down functions beneficial?**
+  Breaking down functions will improve the code readability, making testing and debugging easier.
+
+- **How did refactoring improve the structure of the code?**
+  By isolating the validation, calculation and main function, each unit has a clear responsibility. This will improve the readability and maintainability of code.
+  Also, this will improve the further extend and test experience.
