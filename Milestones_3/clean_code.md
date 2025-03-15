@@ -312,3 +312,57 @@ function checkOut(cart) {
 - **How did refactoring improve the structure of the code?**
   By isolating the validation, calculation and main function, each unit has a clear responsibility. This will improve the readability and maintainability of code.
   Also, this will improve the further extend and test experience.
+
+## Naming Variables & Functions
+
+### Original Code for Naming Variables & Functions
+
+```javascript
+function f1(a) {
+  if (!a) {
+    throw new Error("No Cart Error!!!");
+    return;
+  }
+  if (!a.b || a.b.length === 0) {
+    console.log("The Cart is Empty!");
+    return;
+  }
+  let c = 0;
+  for (let d = 0; d < a.b.length; d++) {
+    let e = a.b[d];
+    console.log("Calculate Good " + e.id + ": " + e.name);
+    e += e.price * e.quantity * e.discount;
+  }
+  return e;
+}
+```
+
+### Refactor for Naming Variables & Functions
+
+```javascript
+function checkOut(cart) {
+  if (!cart) {
+    throw new Error("No Cart Error!!!");
+    return;
+  }
+  if (!cart.goods || cart.goods.length === 0) {
+    console.log("The Cart is Empty!");
+    return;
+  }
+  let totalCost = 0;
+  for (let i = 0; i < cart.goods.length; i++) {
+    let good = cart.goods[i];
+    console.log("Calculate Good " + good.id + ": " + good.name);
+    totalCost += good.price * good.quantity * good.discount;
+  }
+  return totalCost;
+}
+```
+
+- **What makes a good variable or function name?**
+  Good name is descriptive and clearly indicates the purpose of the variable or function.
+  Also the name should use the Uppercase and Lowercase letter to make it readable.
+- **What issues can arise from poorly named variables?**
+  It will be so confused and misinterpretation of the code's purpose. And they will make the code harder to debug, maintain. It is very possible that each time when the team try to debug or maintain the code, they will try to re-understand the code from start.
+- **How did refactoring improve code readability?**
+  By renaming variables and function will clear and meaningful names(like from a to cart, from b to goods), the purpose of the code become clear. This will make the code more readable and convenient for further maintain and extend.
