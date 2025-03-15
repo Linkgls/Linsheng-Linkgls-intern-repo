@@ -1,6 +1,4 @@
 // testApiRequest.js
-// import axios from "axios";
-// import { apiClient, controller } from "./apiClient";
 const { apiClient, controller } = require('./apiClient');
 const axios = require('axios');
 
