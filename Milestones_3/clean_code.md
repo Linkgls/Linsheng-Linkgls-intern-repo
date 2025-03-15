@@ -377,3 +377,70 @@ function checkOut(cart) {
   The linter will detect the issue like missing semicolons and improper spacing. Or some deviations from the Airbnb style guide's conventions.
 - **Did formatting the code make it easier to read?**
   Using the Prettier and ESLint to automatically format the code created a uniform structure, which greatly improved readability. After the refactoring, it is now easier to locate and understand different sections of the code
+
+---
+
+## Understanding Clean Code Principles
+
+**Research and Summarize Clean Code Principles:**
+
+- **Simplicity:**  
+  Keep code as simple as possible. Avoid unnecessary complexity by using straightforward logic and minimal abstractions. Simple code is easier to understand and less prone to bugs.
+- **Readability:**  
+  Code should be easy to understand by anyone who reads it. This means using clear naming conventions, proper formatting, and descriptive comments when needed. Readable code reduces the cognitive load for new developers and helps in debugging.
+- **Maintainability:**  
+  Future developers (including yourself!) should be able to work with the code easily. This is achieved by writing modular, well-documented code with clear separation of concerns, making it easier to update or extend over time.
+- **Consistency:**  
+  Follow style guides and project conventions to maintain a uniform codebase. Consistency helps prevent confusion and makes it easier for teams to collaborate, as everyone adheres to the same set of rules and patterns.
+- **Efficiency:**  
+  Write performant, optimized code without falling into the trap of premature optimization. Strive for balance by writing code that runs well while still being clear and maintainable.
+
+### Example Code from Website
+
+```javascript
+var day = "monday";
+var weather = "sunny";
+
+let daytime = function () {
+  if (day == "monday") {
+    if (weather == "sunny") {
+      console.log(`this is a good sunny monday`);
+    } else if (weather == "cloud") {
+      console.log("this is a cloudy monday");
+    } else if (weather == "storm") {
+      console.log("this is a stormy monday");
+    }
+  } else if (day == "tuesday") {
+    if (weather == "sunny") {
+      console.log(`this is a good sunny tuesday`);
+    } else if (weather == "cloud") {
+      console.log("this is a cloudy tuesday");
+    } else if (weather == "storm") {
+      console.log("this is a stormy tuesday");
+    }
+  } else if (day == "wednesday") {
+    //other day of the week
+  }
+};
+
+daytime();
+```
+
+### Example Code After Rewrite
+
+```javascript
+var day;
+var weather;
+
+weathers = {
+  sunny: "sunny",
+  cloud: "cloudy",
+  storm: "stormy",
+};
+
+let daytime = function (day, weather) {
+  console.log(`this is a good ${weathers[weather]} ${day}`);
+};
+
+daytime("monday", "cloud");
+```
