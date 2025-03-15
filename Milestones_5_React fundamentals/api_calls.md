@@ -47,7 +47,7 @@ export { apiClient, controller };
 
 ```javascript
 // testApiRequest.js
-import { apiClient } from "./apiClient";
+import { apiClient, controller } from "./apiClient";
 
 async function testApiRequest() {
   try {
