@@ -1,4 +1,5 @@
 // testApiRequest.js
+// module type import
 const { apiClient, controller } = require('./apiClient');
 const axios = require('axios');
 

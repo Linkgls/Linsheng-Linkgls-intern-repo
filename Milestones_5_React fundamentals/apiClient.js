@@ -1,4 +1,5 @@
 // apiClient.js
+// module type import...
 const axios = require('axios');
 // Utility function to generate a random request ID
 function generateRequestId() {
