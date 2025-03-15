@@ -366,3 +366,14 @@ function checkOut(cart) {
   It will be so confused and misinterpretation of the code's purpose. And they will make the code harder to debug, maintain. It is very possible that each time when the team try to debug or maintain the code, they will try to re-understand the code from start.
 - **How did refactoring improve code readability?**
   By renaming variables and function will clear and meaningful names(like from a to cart, from b to goods), the purpose of the code become clear. This will make the code more readable and convenient for further maintain and extend.
+
+---
+
+## Code Formatting & Style Guides
+
+- **Why is code formatting important?**
+  Code formatting ensures that the code is easy to read. A consistent style helps developers quickly understand the codebase, and making it easier to spot potential issues.
+- **What issues did the linter detect?**
+  The linter will detect the issue like missing semicolons and improper spacing. Or some deviations from the Airbnb style guide's conventions.
+- **Did formatting the code make it easier to read?**
+  Using the Prettier and ESLint to automatically format the code created a uniform structure, which greatly improved readability. After the refactoring, it is now easier to locate and understand different sections of the code
