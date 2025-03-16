@@ -5,6 +5,8 @@ import Home from "./Home";
 import Profile from "./Profile";
 import Test from "./Test";
 import HelloWorld from "./HelloWorld";
+import ParentBuggy from "./DerivedStateBuggy";
+import ParentFixed from "./DerivedStateFixed";
 import "./output.css";
 
 const App = () => {
@@ -15,6 +17,8 @@ const App = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/test" element={<Test />} />
         <Route path="/hello" element={<HelloWorld />} />
+        <Route path="/buggy" element={<ParentBuggy />} />
+        <Route path="/fixed" element={<ParentFixed />} />
       </Routes>
     </Router>
   );
