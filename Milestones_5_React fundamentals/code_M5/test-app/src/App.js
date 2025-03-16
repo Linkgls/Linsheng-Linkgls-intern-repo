@@ -3,8 +3,7 @@ import React from 'react';
 import WelcomeMessage from './components/WelcomeMessage';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import ContactForm from './components/ContactForm';
-import OptimizedComponent from './components/OptimizedComponent';
-import OptimizedList from './components/OptimizedList';
+import EffectDemo from './components/EffectDemo';
 
 const App = () => {
   return (
@@ -13,7 +12,8 @@ const App = () => {
       <WelcomeMessage />
       <ContactForm />
       {/* <OptimizedComponent /> */}
-      <OptimizedList />
+      {/* <OptimizedList /> */}
+      <EffectDemo />
     </div>
   );
 };

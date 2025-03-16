@@ -1,4 +1,6 @@
-# Preventing Unnecessary Renders with useCallback
+# React Hooks
+
+## Preventing Unnecessary Renders with useCallback
 
 ## Code to test useCallback
 
@@ -111,6 +113,10 @@ const OptimizedList = () => {
 export default OptimizedList;
 ```
 
+---
+
+## Optimizing Performance with useMemo
+
 ## Reflection about useMemo
 
 - **How does useMemo improve performance?**
@@ -129,3 +135,86 @@ export default OptimizedList;
 
 - **What happens if you remove useMemo from your implementation?**
   The cached value will recompute on every render, even if inputs are unchanged. This can degrade performance, especially in components with frequent re-renders (e.g., animations, real-time data feeds).
+
+---
+
+## Understanding React Hooks: useEffect
+
+## Code to test useEffect
+
+```javascript
+// src/components/EffectDemo.js
+import React, { useState, useEffect } from "react";
+
+const EffectDemo = () => {
+  const [data, setData] = useState(null);
+  const [fetchTrigger, setFetchTrigger] = useState(false);
+
+  // when the component mounts and unmounts, log the event
+  useEffect(() => {
+    console.log("EffectDemo mounted"); // log when the component mounts
+
+    return () => {
+      console.log("EffectDemo unmounted"); // log when the component unmounts
+    };
+  }, []); // empty dependency array: only run on mount and unmount
+
+  // when fetchTrigger changes, fetch data from an API
+  useEffect(() => {
+    if (!fetchTrigger) return; // only run when fetchTrigger is true
+    console.log("Fetching data...");
+
+    // use AbortController to support cancelling the request
+    const controller = new AbortController();
+
+    fetch("https://jsonplaceholder.typicode.com/todos/1", {
+      signal: controller.signal,
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        setData(json);
+        console.log("Data fetched:", json);
+      })
+      .catch((error) => {
+        if (error.name === "AbortError") {
+          console.log("Fetch aborted");
+        } else {
+          console.error("Error fetching data:", error);
+        }
+      });
+
+    // cleanup function: cancel the request when the effect re-runs or the component unmounts
+    return () => {
+      console.log("Cleaning up fetch effect");
+      controller.abort();
+    };
+  }, [fetchTrigger]); // dependency: fetchTrigger
+
+  return (
+    <div>
+      <h2>Effect Demo</h2>
+      <button onClick={() => setFetchTrigger((prev) => !prev)}>
+        {fetchTrigger ? "Cancel Fetch" : "Fetch Data"}
+      </button>
+      {data && (
+        <div>
+          <h3>Fetched Data:</h3>
+          <pre>{JSON.stringify(data, null, 2)}</pre>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default EffectDemo;
+```
+
+## Reflection about useEffect
+
+- **When should you use useEffect instead of handling logic inside event handlers?**
+  useEffect is ideal for side effects that are not directly triggered by a single event—for example, logging on mount/unmount, subscribing to external data sources, or performing cleanup. It runs after the component renders, keeping event handlers focused on user interactions.
+- **What happens if you don’t provide a dependency array?**
+  If you omit the dependency array, the effect will run after every render.
+- **How can improper use of useEffect cause performance issues?**
+  If you provide an incorrect dependency array (or omit it entirely), the effect may run more often than necessary, re-running expensive operations or network requests on every render. This wastes resources and can make the application sluggish.
+  For some time/resource consuming function, should use the useEffect only necessary.
