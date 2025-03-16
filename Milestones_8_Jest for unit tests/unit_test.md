@@ -34,4 +34,4 @@
   By mocking API calls, tests become independent of external services. This ensures that tests run consistently and quickly regardless of network conditions or API availability.
   Mocking allows you to simulate various responses (success, error, edge cases) that may be difficult or impractical to reproduce with real API calls.
 - **What are some common pitfalls when testing asynchronous code?**
-  Overusing mocks can lead to tests that pass even when the integration with real APIs would fail. It’s important to strike a balance and ensure that critical integration points are also tested in staging or integration tests.
+  Overusing mocks may lead to tests that pass even when the integration with real APIs would fail. The real APIs are more important. It’s important to strike a balance and ensure that critical integration points are also tested in staging or integration tests.
