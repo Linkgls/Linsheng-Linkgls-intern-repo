@@ -257,3 +257,4 @@ export default HelloWorld;
 ## Reflection about Setting up a React project
 
 - **What challenges did you face during setup?**
+  The tailwind css may have some issue about the version. THe latest version 4.x.x seem have some issue, so I decided to use the yarn to add the specific version to try to avoid the version conflict.
