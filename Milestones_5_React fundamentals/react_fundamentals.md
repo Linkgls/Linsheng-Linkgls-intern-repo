@@ -198,3 +198,54 @@ export default Button;
 - **What are some potential pitfalls?**
   Maybe hard to read the code or make the bundle size too large?
   But I have used the shadcn combined with Tailwind CSS to design the UI, which will optimize the performance by importing styles on demand.
+
+---
+
+## Handling State & User Input
+
+I think the order of this milestone is wrong... I have already upload the Counter.js to the test-app project..
+
+## Reflections about Handling State & User Input
+
+- **What happens if we modify state directly instead of using setState?**
+  - **The UI may not update**: React relies on state immutability to trigger re-renders. Direct mutations bypass this mechanism, leaving the UI outdated.
+  - **Unpredictable Bugs**: Future state updates may conflict with previous mutations, causing hard-to-track bugs (e.g., stale closures in callbacks).
+  - **Broken Optimizations**: Features like React.memo or useMemo rely on immutability. Direct mutations make these optimizations unreliable.
+
+---
+
+## Understanding Components & Props
+
+## Code for Understanding Components & Props
+
+```javascript
+import React from "react";
+import PropTypes from "prop-types";
+
+const HelloWorld = ({ name }) => {
+  return (
+    <div className="p-4">
+      <h1>Hello, Focus Bear!</h1>
+      <p>Welcome, {name}!</p>
+    </div>
+  );
+};
+
+HelloWorld.propTypes = {
+  name: PropTypes.string,
+};
+
+HelloWorld.defaultProps = {
+  name: "Guest",
+};
+
+export default HelloWorld;
+```
+
+## Reflections about Understanding Components & Props
+
+- **Why are components important in React?**
+  - **Modularity & Reusability**: Components act as building blocks. Write once, reuse anywhere (e.g., buttons, title, avatar).
+  - **Encapsulation**: Components hide internal logic (state, API calls), exposing only props/UI.
+  - **Separation of Concerns**: Split complex UIs into smaller, focused components
+  - **Maintainability**: Centralized logic reduces redundancy. Fix a bug in one component → fix it everywhere.
