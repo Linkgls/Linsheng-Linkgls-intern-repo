@@ -1,20 +1,19 @@
 // src/App.js
-import React from 'react';
-import WelcomeMessage from './components/WelcomeMessage';
-import LanguageSwitcher from './components/LanguageSwitcher';
-import ContactForm from './components/ContactForm';
-import EffectDemo from './components/EffectDemo';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import Profile from "./Profile";
+import Test from "./Test";
 
 const App = () => {
   return (
-    <div style={{ padding: '20px' }}>
-      <LanguageSwitcher />
-      <WelcomeMessage />
-      <ContactForm />
-      {/* <OptimizedComponent /> */}
-      {/* <OptimizedList /> */}
-      <EffectDemo />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/test" element={<Test />} />
+      </Routes>
+    </Router>
   );
 };
 
