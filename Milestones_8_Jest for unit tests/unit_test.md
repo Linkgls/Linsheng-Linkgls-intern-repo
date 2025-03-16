@@ -35,3 +35,15 @@
   Mocking allows you to simulate various responses (success, error, edge cases) that may be difficult or impractical to reproduce with real API calls.
 - **What are some common pitfalls when testing asynchronous code?**
   Overusing mocks may lead to tests that pass even when the integration with real APIs would fail. The real APIs are more important. It’s important to strike a balance and ensure that critical integration points are also tested in staging or integration tests.
+
+---
+
+## Redux Testing Reflection
+
+- **What was the most challenging part of testing Redux?**
+  Simulating the async behavior (e.g., waiting for promises to resolve) requires setting up mocks and using async utilities (such as async/await) in tests. It also involves carefully tracking the dispatched actions and ensuring the state transitions are correctly tested.
+- **How do Redux tests differ from React component tests?**
+  - **Redux tests focus on pure functions:**  
+    Testing Redux typically involves testing reducers and actions, which are pure functions. This isolation makes Redux tests more straightforward since they don’t depend on the DOM or component lifecycle.
+  - **Component tests involve UI and interactions:**  
+    In contrast, React component tests require simulating user interactions, dealing with asynchronous state updates, and inspecting rendered output. This often makes them more complex and sensitive to implementation details.
