@@ -1,7 +1,7 @@
 // src/components/OptimizedComponent.js
 import React, { useState, useCallback } from 'react';
 
-// 子组件：未使用 useCallback 的回调函数
+// Child component: callback function without useCallback
 const ChildWithoutCallback = React.memo(({ onClick }) => {
   console.log("ChildWithoutCallback rendered");
   return (
@@ -11,7 +11,7 @@ const ChildWithoutCallback = React.memo(({ onClick }) => {
   );
 });
 
-// 子组件：使用 useCallback 缓存回调函数
+// Child component: callback function with useCallback
 const ChildWithCallback = React.memo(({ onClick }) => {
   console.log("ChildWithCallback rendered");
   return (

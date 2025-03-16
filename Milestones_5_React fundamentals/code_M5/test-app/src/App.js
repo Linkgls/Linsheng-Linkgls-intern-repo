@@ -4,6 +4,7 @@ import WelcomeMessage from './components/WelcomeMessage';
 import LanguageSwitcher from './components/LanguageSwitcher';
 import ContactForm from './components/ContactForm';
 import OptimizedComponent from './components/OptimizedComponent';
+import OptimizedList from './components/OptimizedList';
 
 const App = () => {
   return (
@@ -11,7 +12,8 @@ const App = () => {
       <LanguageSwitcher />
       <WelcomeMessage />
       <ContactForm />
-      <OptimizedComponent />
+      {/* <OptimizedComponent /> */}
+      <OptimizedList />
     </div>
   );
 };
