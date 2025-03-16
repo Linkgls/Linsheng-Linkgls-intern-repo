@@ -3,7 +3,8 @@ import React from "react";
 import WelcomeMessage from "./components/WelcomeMessage";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 import ContactForm from "./components/ContactForm";
-import ListForm from "./components/ListForm";
+import Counter from "./components/Counter";
+import Button from "./components/Button";
 
 const Test = () => {
   return (
@@ -14,7 +15,12 @@ const Test = () => {
       {/* <OptimizedComponent /> */}
       {/* <OptimizedList /> */}
       {/* <EffectDemo /> */}
-      <ListForm />
+      {/* <ListForm /> */}
+      <Counter />
+      {/* test button */}
+      <div className="mt-10 flex justify-center">
+        <Button onClick={() => alert("Button clicked!")}>Test Button</Button>
+      </div>
     </div>
   );
 };
