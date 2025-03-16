@@ -5,6 +5,7 @@ import Home from "./Home";
 import Profile from "./Profile";
 import Test from "./Test";
 import HelloWorld from "./HelloWorld";
+import "./output.css";
 
 const App = () => {
   return (

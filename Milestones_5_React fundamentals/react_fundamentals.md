@@ -249,3 +249,11 @@ export default HelloWorld;
   - **Encapsulation**: Components hide internal logic (state, API calls), exposing only props/UI.
   - **Separation of Concerns**: Split complex UIs into smaller, focused components
   - **Maintainability**: Centralized logic reduces redundancy. Fix a bug in one component → fix it everywhere.
+
+---
+
+## Setting up a React project
+
+## Reflection about Setting up a React project
+
+- **What challenges did you face during setup?**
