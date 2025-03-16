@@ -3,6 +3,7 @@ import React from "react";
 import WelcomeMessage from "./components/WelcomeMessage";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 import ContactForm from "./components/ContactForm";
+import ListForm from "./components/ListForm";
 
 const Test = () => {
   return (
@@ -13,6 +14,7 @@ const Test = () => {
       {/* <OptimizedComponent /> */}
       {/* <OptimizedList /> */}
       {/* <EffectDemo /> */}
+      <ListForm />
     </div>
   );
 };
