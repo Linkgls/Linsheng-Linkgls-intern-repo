@@ -72,3 +72,5 @@ export default ContactForm;
 
 - **What are the benefits of using Formik’s validation instead of writing validation logic manually?**
   Formik integrates Yup to define validation rules declaratively (e.g., password: Yup.string().min(8)). Errors auto-sync with form fields, trigger on user interactions (change/blur), and reduce validation code duplication compared to manual onSubmit checks.
+
+PS: I think that I need to learn how to use the Formik and still make the Form beautiful.
