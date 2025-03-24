@@ -95,3 +95,9 @@ yarn add posthog-react-native
 ```bash
 yarn add react-native-localize
 ```
+
+## During This Period
+
+I found that all the things except the React-Native-Background-Fetch could work on the web browser. However it seems like when I try to use my iphone or IOS simulator something went wrong. And it is complicate and hard for me to solve. So I decide to create a new project only by expo but not the react-navigation/template to test the rest functions and make sure that all the libraries could work normal on ios device.
+
+So I make another project called test-app and all the config will be shown in this new project and README_New.md.

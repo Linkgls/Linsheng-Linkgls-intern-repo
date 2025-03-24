@@ -20,7 +20,7 @@ import "../i18n";
 import I18nExample from "./testScreens/I18nExample";
 import NativeModuleExample from "./testScreens/NativeModuleExample";
 import SentryExample from "./testScreens/SentryExample";
-import ReduxExample from "./testScreens/ReduxExmaple";
+import ReduxExample from "./testScreens/ReduxExample";
 import BackgroundFetchExample from "./testScreens/BackgroundFetchExample";
 
 const HomeTabs = createBottomTabNavigator({
@@ -70,28 +70,39 @@ const RootStack = createNativeStackNavigator({
     },
     Home: {
       screen: Home,
-      linking: {
-        path: "Home",
-      },
+      // linking: {
+      //   path: "home",
+      // },
     },
     Profile: {
       screen: Profile,
-      linking: {
-        path: "Profile/:user(@[a-zA-Z0-9-_]+)",
-        parse: {
-          user: (value) => value.replace(/^@/, ""),
-        },
-        stringify: {
-          user: (value) => `@${value}`,
-        },
-      },
+      // linking: {
+      //   path: "profile/:user(@[a-zA-Z0-9-_]+)",
+      //   parse: {
+      //     user: (value) => value.replace(/^@/, ""),
+      //   },
+      //   stringify: {
+      //     user: (value) => `@${value}`,
+      //   },
+      // },
     },
     Settings: {
       screen: Settings,
+      // linking: {
+      //   path: "settings",
+      // },
       options: ({ navigation }) => ({
         presentation: "modal",
         headerRight: () => (
-          <HeaderButton onPress={navigation.goBack}>
+          <HeaderButton
+            onPress={() => {
+              if (navigation.canGoBack()) {
+                navigation.goBack();
+              } else {
+                navigation.navigate("home");
+              }
+            }}
+          >
             <Text>Close</Text>
           </HeaderButton>
         ),
@@ -111,44 +122,44 @@ const RootStack = createNativeStackNavigator({
       options: {
         title: "Test",
       },
-      linking: { path: "test" },
+      // linking: { path: "test" },
     },
     I18nExample: {
       screen: I18nExample,
       options: {
         title: "I18n Example",
       },
-      linking: {
-        path: "i18n",
-      },
+      // linking: {
+      //   path: "i18n",
+      // },
     },
     NativeModuleExample: {
       screen: NativeModuleExample,
       options: {
         title: "Native Module Example",
       },
-      linking: { path: "native-modules" },
+      // linking: { path: "native-modules" },
     },
     SentryExample: {
       screen: SentryExample,
       options: {
         title: "Sentry Example",
       },
-      linking: { path: "sentry" },
+      // linking: { path: "sentry" },
     },
     ReduxExample: {
       screen: ReduxExample,
       options: {
         title: "Redux Example",
       },
-      linking: { path: "redux" },
+      // linking: { path: "redux" },
     },
     BackgroundFetchExample: {
       screen: BackgroundFetchExample,
       options: {
         title: "Background Fetch Example",
       },
-      linking: { path: "background" },
+      // linking: { path: "background" },
     },
   },
 });

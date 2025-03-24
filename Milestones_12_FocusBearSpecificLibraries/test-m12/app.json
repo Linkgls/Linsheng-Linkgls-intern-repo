@@ -10,7 +10,7 @@
     "scheme": "testm12",
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.test-m12",
+      "bundleIdentifier": "testm12",
       "infoPlist": {
         "NSAppTransportSecurity": {
           "NSExceptionDomains": {
@@ -28,7 +28,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anonymous.testm12"
+      "package": "testm12"
     },
     "web": {
       "favicon": "./assets/favicon.png"

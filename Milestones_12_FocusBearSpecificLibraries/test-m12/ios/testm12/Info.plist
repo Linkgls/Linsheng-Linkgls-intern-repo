@@ -28,7 +28,7 @@
         <key>CFBundleURLSchemes</key>
         <array>
           <string>testm12</string>
-          <string>com.anonymous.test-m12</string>
+          <string>testm12</string>
         </array>
       </dict>
       <dict>

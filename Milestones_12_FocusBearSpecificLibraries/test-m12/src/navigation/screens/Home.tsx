@@ -8,15 +8,15 @@ export function Home() {
       <Text>Will test all the necessary libraries</Text>
       <Button
         title="Go to Profile"
-        onPress={() => Linking.openURL("Profile/@Link")}
+        onPress={() => Linking.openURL("profile/@Link")}
       ></Button>
       <Button
         title="Go to Settings"
-        onPress={() => Linking.openURL("Settings")}
+        onPress={() => Linking.openURL("settings")}
       ></Button>
       <Button
         title="Go to Test"
-        onPress={() => Linking.openURL("Test")}
+        onPress={() => Linking.openURL("test")}
       ></Button>
     </View>
   );

@@ -7,7 +7,7 @@ export function NotFound() {
       <Text>404</Text>
       <Button
         title="Go to Home"
-        onPress={() => Linking.openURL("Home")}
+        onPress={() => Linking.openURL("home")}
       ></Button>
     </View>
   );

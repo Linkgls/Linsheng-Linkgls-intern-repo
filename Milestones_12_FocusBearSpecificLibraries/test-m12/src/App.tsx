@@ -3,6 +3,7 @@ import { Asset } from "expo-asset";
 import * as SplashScreen from "expo-splash-screen";
 import * as React from "react";
 import { Navigation } from "./navigation";
+
 import * as Linking from "expo-linking";
 import * as Sentry from "@sentry/react-native";
 
@@ -32,13 +33,42 @@ Asset.loadAsync([
 SplashScreen.preventAutoHideAsync();
 
 const prefix = Linking.createURL("testm12://");
+import { LinkingOptions } from "@react-navigation/native";
+import { ParamListBase } from "@react-navigation/routers";
+
+const linking: LinkingOptions<ParamListBase> = {
+  prefixes: [prefix],
+  config: {
+    screens: {
+      HomeTabs: "hometabs",
+      Home: "home",
+      Profile: {
+        path: "profile/:user",
+        parse: {
+          user: (value: string) => value.replace(/^@/, ""),
+        },
+        stringify: {
+          user: (value: string) => `@${value}`,
+        },
+      },
+      Settings: "settings",
+      NotFound: "*",
+      Test: "test",
+      I18nExample: "i18n",
+      NativeModuleExample: "native-modules",
+      SentryExample: "sentry",
+      ReduxExample: "redux",
+      BackgroundFetchExample: "background",
+    },
+  },
+};
 function App() {
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <Navigation linking={{ prefixes: [prefix] }} />;
-      </PersistGate>
-    </Provider>
+    // <Provider store={store}>
+    //   {/* <PersistGate loading={null} persistor={persistor}> */}
+    //   <Navigation linking={{ prefixes: [prefix] }} />;{/* </PersistGate> */}
+    // </Provider>
+    <Navigation linking={linking} />
   );
 }
 
