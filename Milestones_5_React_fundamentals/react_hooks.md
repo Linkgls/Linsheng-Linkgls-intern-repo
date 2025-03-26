@@ -23,12 +23,14 @@ const ChildWithCallback = React.memo(({ onClick }) => {
 const OptimizedComponent = () => {
   const [count, setCount] = useState(0);
 
-  // define an uncached callback function that creates a new function every time it is rendered
+  // define an uncached callback function that creates a new function
+  // every time it is rendered
   const handleClickNoCallback = () => {
     console.log("Button clicked without useCallback");
   };
   // define a callback function that uses useCallback to cache the function
-  // since the dependency array is empty, this function is created only once throughout the lifecycle
+  // since the dependency array is empty, this function is created only
+  // once throughout the lifecycle
   const handleClickWithCallback = useCallback(() => {
     console.log("Button clicked with useCallback");
   }, []);
@@ -88,7 +90,8 @@ const expensiveCalculation = (num) => {
 
 const OptimizedList = () => {
   const [number, setNumber] = useState(0);
-  const [dummy, setDummy] = useState(0); // Used to trigger re-render without affecting calculation
+  const [dummy, setDummy] = useState(0);
+  // Used to trigger re-render without affecting calculation
 
   // a console.log() statement is added to the component to track when it is rendered
   console.log("OptimizedList rendered");
@@ -198,7 +201,8 @@ const EffectDemo = () => {
         }
       });
 
-    // cleanup function: cancel the request when the effect re-runs or the component unmounts
+    // cleanup function: cancel the request when the effect
+    // re-runs or the component unmounts
     return () => {
       console.log("Cleaning up fetch effect");
       controller.abort();

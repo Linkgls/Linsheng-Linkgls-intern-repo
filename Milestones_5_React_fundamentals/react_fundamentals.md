@@ -145,13 +145,15 @@ const Counter = () => {
       <div className="flex justify-center space-x-4">
         <Button
           onClick={() => setCount(count + 1)}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 transition"
+          className="px-4 py-2 bg-blue-500 text-white rounded
+          hover:bg-blue-600 active:bg-blue-700 transition"
         >
           Increase
         </Button>
         <Button
           onClick={() => setCount(count - 1)}
-          className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 active:bg-red-700 transition"
+          className="px-4 py-2 bg-red-500 text-white rounded
+          hover:bg-red-600 active:bg-red-700 transition"
         >
           Decrease
         </Button>
@@ -171,7 +173,8 @@ const Button = ({ children, onClick, type = "button", className = "" }) => {
     <button
       type={type}
       onClick={onClick}
-      className={`px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 active:bg-green-700 transition ${className}`}
+      className={`px-4 py-2 bg-green-500 text-white rounded
+      hover:bg-green-600 active:bg-green-700 transition ${className}`}
     >
       {children}
     </button>
