@@ -13,8 +13,8 @@ navigation. And I name it test-m12 to test all the react native components.cd
 npx create-expo-app@latest --template react-navigation/template
 ```
 
-Use the default name my-app. The path of this app is ./Milestones_12_Focus\
-Bear\ specific\ libraries/my-app
+Use the name test-m12. The path of this app is
+./Milestones_12_FocusBearSpecificLibraries/test-m12
 
 ## install the react navigation
 
