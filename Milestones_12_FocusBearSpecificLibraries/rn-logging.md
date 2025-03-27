@@ -73,16 +73,21 @@
 import * as Sentry from "@sentry/react-native";
 
 // This initializes Sentry with your project's DSN and configuration settings.
-// It sets up the context for error reporting, including enabling personal data tracking
-// (sendDefaultPii), and configures performance monitoring via traces and profiles.
+// It sets up the context for error reporting
+// , including enabling personal data tracking
+// (sendDefaultPii), and configures performance
+// monitoring via traces and profiles.
 Sentry.init({
   dsn: "DSN After register the account on Sentry website.",
   sendDefaultPii: true, // Adds context like IP address, cookies, and user data.
-  tracesSampleRate: 1.0, // Captures 100% of transactions for performance monitoring. Adjust for production use.
+  tracesSampleRate: 1.0,
+  // Captures 100% of transactions for performance monitoring.
+  // Adjust for production use.
   profilesSampleRate: 1.0, // Captures profiling data for every transaction.
 });
 
-// Optionally, you can wrap your root component with Sentry's error boundary for global error handling.
+// Optionally, you can wrap your root component with
+// Sentry's error boundary for global error handling.
 export default Sentry.wrap(RootLayout);
 ```
 

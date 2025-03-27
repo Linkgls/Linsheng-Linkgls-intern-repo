@@ -139,7 +139,8 @@ to perform periodic data fetching or updates.
   TaskManager.defineTask(BACKGROUND_FETCH_TASK, async () => {
     try {
       console.log("Background fetch task executed");
-      // Perform background operations here, such as data synchronization or API calls.
+      // Perform background operations here,
+      // such as data synchronization or API calls.
       // Return one of the BackgroundFetch result types:
       return BackgroundFetch.BackgroundFetchResult.NewData;
     } catch (error) {
