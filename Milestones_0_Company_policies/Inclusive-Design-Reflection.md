@@ -10,8 +10,8 @@ supports and respects these needs.
 
 ## Research & Learn
 
-### Who are considered vulnerable populations, and what challenges might they face in digital spaces?
-
+- **Who are considered vulnerable populations, and what challenges might they
+  face in digital spaces? **
 - **Vulnerable Populations:**  
   Individuals with neurodivergent conditions (e.g., ADHD, Autism), older adults,
   people with visual or hearing impairments, and others who may struggle with
@@ -63,7 +63,8 @@ supports and respects these needs.
 
 ## Reflection
 
-### How can you adjust your communication style to be more inclusive of neurodivergent users and teammates?
+- **How can you adjust your communication style to be more inclusive of
+  neurodivergent users and teammates?**
 
 I plan to:
 
@@ -77,7 +78,8 @@ I plan to:
   Regularly check in to ensure that my messages are understood and to offer
   further support if needed.
 
-### What are some common UX or communication pitfalls that might make Focus Bear less accessible or supportive?
+- **What are some common UX or communication pitfalls that might make Focus Bear
+  less accessible or supportive?**
 
 - **Overwhelming Interfaces:**  
   Cluttered designs with too many features and notifications can be distracting.
@@ -89,7 +91,8 @@ I plan to:
   Not offering options to reduce sensory overload (e.g., disabling animations)
   can alienate some users.
 
-### What is one practical change you can make in your work to better support vulnerable populations?
+- **What is one practical change you can make in your work to better support
+  vulnerable populations?**
 
 I will propose the implementation of a **"Focus Mode"** in our product. This
 mode would simplify the user interface by hiding non-critical elements and
