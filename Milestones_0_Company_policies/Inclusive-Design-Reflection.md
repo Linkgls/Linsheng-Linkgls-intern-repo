@@ -11,7 +11,7 @@ supports and respects these needs.
 ## Research & Learn
 
 - **Who are considered vulnerable populations, and what challenges might they
-  face in digital spaces? **
+  face in digital spaces?**
 - **Vulnerable Populations:**  
   Individuals with neurodivergent conditions (e.g., ADHD, Autism), older adults,
   people with visual or hearing impairments, and others who may struggle with
